@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>3D Model Viewer (Adaptive)</title>
+    <link rel="stylesheet" href="Style/adap.css" />
+    <link rel="stylesheet" href="Style/style.css" />
+
+    <script
+      type="module"
+      src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"
+    ></script>
+  </head>
+  <body>
+    <div id="model-container">
+      <model-viewer
+        src="/image/ak-47_assault_rifle.glb"
+        ar
+        ar-modes="webxr scene-viewer quick-look"
+        camera-controls
+        tone-mapping="neutral"
+        poster="poster.webp"
+        shadow-intensity="1"
+        camera-orbit="-590.2deg 74.34deg 1.761m"
+        field-of-view="26.26deg"
+      >
+        <div class="progress-bar hide" slot="progress-bar">
+          <div class="update-bar"></div>
+        </div>
+        <button slot="ar-button" id="ar-button">View in AR</button>
+      </model-viewer>
+    </div>
+
+    <div class="orientation-hint">
+      <h2>Поверните устройство</h2>
+      <p>Для лучшего просмотра поверните телефон в горизонтальное положение</p>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="100"
+        height="100"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <rect
+          x="4"
+          y="2"
+          width="16"
+          height="20"
+          rx="2"
+          transform="rotate(180 12 12)"
+        />
+        <line x1="12" y1="6" x2="12" y2="18" />
+      </svg>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
